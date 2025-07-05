@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { useParams, useRouter } from "next/navigation"
-import { useGroupPermissions } from "../layout"
+import { useGroupPermissions } from "./hooks"
 import styles from "./members.module.css"
 import axios from "axios"
 import api from "@/app/api"

@@ -5,7 +5,7 @@ import { useEffect, useState, type FormEvent } from "react"
 import { format, parseISO } from 'date-fns'
 import { useParams } from "next/navigation"
 import { createPortal } from "react-dom"
-import { useGroupPermissions } from "../layout"
+import { useGroupPermissions } from "./hooks"
 import api from "@/app/api"
 import styles from "./votes.module.css"
 
