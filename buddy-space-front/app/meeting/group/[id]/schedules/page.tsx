@@ -21,7 +21,7 @@ import { useGroupPermissions } from '../hooks';
 import { useParams } from 'next/navigation';
 import { ko } from 'date-fns/locale'
 import { registerLocale } from 'react-datepicker';
-import { usePermissionChecker } from '../layout';
+import { usePermissionChecker } from '../hooks';
 
 
 registerLocale('ko', ko);
