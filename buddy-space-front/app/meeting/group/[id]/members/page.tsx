@@ -394,7 +394,7 @@ export default function MembersPage() {
     try {
       setIsCreatingInvite(true)
       const headers = await getAuthHeaders()
-      const res = await axios.patch(`http://localhost:8080/api/groups/${groupId}/invites`, {}, { headers })
+      const res = await axios.patch(`/api/groups/${groupId}/invites`, {}, { headers })
       setInviteData(res.data.result)
       showToast("초대 링크 생성 완료")
     } catch (e: any) {

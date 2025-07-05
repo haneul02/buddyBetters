@@ -21,7 +21,7 @@ export function useChatDropdown() {
 
     const fetchGroupChatRooms = async () => {
       try {
-        const groupsRes = await fetch("http://localhost:8080/api/groups/my", {
+        const groupsRes = await fetch("/api/groups/my", {
           headers: { Authorization: `Bearer ${token}` },
         })
 
@@ -38,7 +38,7 @@ export function useChatDropdown() {
           const groupId = group.groupId || group.id
           if (!groupId) continue
 
-          const chatRes = await fetch(`http://localhost:8080/api/group/${groupId}/chat/rooms/my`, {
+          const chatRes = await fetch(`/api/group/${groupId}/chat/rooms/my`, {
             headers: { Authorization: `Bearer ${token}` },
           })
           const chatData = await chatRes.json()

@@ -11,6 +11,9 @@ const baseURL =
 // ————— 토큰 재발급 헬퍼 —————
 // 클라이언트에 저장된 refreshToken(또는 쿠키)을 이용해서 재발급만 담당
 export async function reissueToken() {
+  if (typeof window === "undefined") {
+    return;
+  }
   try {
     console.debug("[Token] 재발급 요청 시작");
     const refreshToken = localStorage.getItem("refreshToken");
@@ -35,6 +38,9 @@ const api = axios.create({
 // ————— 요청 인터셉터 —————
 api.interceptors.request.use(
   (config) => {
+    if (typeof window === "undefined") {
+      return config;
+    }
     console.debug("[API → ]", config.method?.toUpperCase(), config.url, "헤더:", config.headers);
     const raw = localStorage.getItem("accessToken") || "";
     const token = raw.replace(/^"|"$/g, "").replace(/^Bearer\s*/, "");
@@ -57,6 +63,9 @@ api.interceptors.response.use(
     return res;
   },
   async (err: any) => {
+    if (typeof window === "undefined") {
+      return Promise.reject(err);
+    }
     const original: any = err.config;
     const status = err.response?.status;
     console.error(`[API ← ERROR] ${original.method?.toUpperCase()} ${original.url} → ${status}`, err.response?.data);

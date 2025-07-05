@@ -149,7 +149,7 @@ export default function PhotosPage() {
     try {
       setDownloadState({ isDownloading: true, text: "⏳ 준비 중..." })
 
-      const response = await fetchWithAuth(`http://localhost:8080/api/attachments/${currentAttachment.id}/download`)
+      const response = await fetchWithAuth(`/api/attachments/${currentAttachment.id}/download`)
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)

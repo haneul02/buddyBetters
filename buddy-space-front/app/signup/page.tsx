@@ -96,7 +96,7 @@ export default function SignupPage() {
     }
 
     try {
-      await axios.post("http://localhost:8080/api/users/signup", { ...form })
+      await axios.post("/api/users/signup", { ...form })
       setServerMessage("회원가입 성공! 로그인 페이지로 이동합니다.")
       setMessageType("success")
       setTimeout(() => router.push("/login"), 1500)

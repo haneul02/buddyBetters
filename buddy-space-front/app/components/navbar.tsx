@@ -120,7 +120,7 @@ export default function NavBar() {
       const token = localStorage.getItem("accessToken")
       if (!token) throw new Error("토큰이 없습니다. 로그인해주세요.")
 
-      const groupsRes = await fetch("http://localhost:8080/api/groups/my", {
+      const groupsRes = await fetch("/api/groups/my", {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
@@ -139,7 +139,7 @@ export default function NavBar() {
         const groupName = group.name || group.groupName
         if (!groupId) continue
 
-        const chatRes = await fetch(`http://localhost:8080/api/group/${groupId}/chat/rooms/my`, {
+        const chatRes = await fetch(`/api/group/${groupId}/chat/rooms/my`, {
           headers: {
             Authorization: `Bearer ${token}`,
             "Content-Type": "application/json",
