@@ -3,7 +3,7 @@
 import type React from "react"
 import { useState, useEffect, useRef } from "react"
 import { useParams, useRouter } from "next/navigation"
-import { useGroupPermissions } from "../hooks"
+import { useGroupPermissions } from "../layout"
 import styles from "./setting.module.css"
 import api from "@/app/api"
 import { getAuthHeaders } from "@/app/api/auth"
