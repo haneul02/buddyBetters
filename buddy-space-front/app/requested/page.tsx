@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import styles from "./requested.module.css"
-import api from "@/app/api"
+import api from "@/utils/api"
 
 interface UserInfo {
   name: string

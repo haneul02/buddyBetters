@@ -5,7 +5,7 @@ import { useParams, useRouter } from "next/navigation"
 import { useGroupPermissions } from "../hooks"
 import styles from "./members.module.css"
 import axios from "axios"
-import api from "@/app/api"
+import api from "@/utils/api"
 import { createPortal } from "react-dom"
 
 // ModalPortal 컴포넌트 추가

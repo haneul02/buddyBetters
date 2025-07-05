@@ -5,7 +5,7 @@ import type React from "react"
 import { useState, useEffect } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import styles from "./invite.module.css"
-import api from "@/app/api"
+import api from "@/utils/api"
 
 interface GroupInfo {
   groupId: number

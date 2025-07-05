@@ -5,7 +5,7 @@ import type React from "react"
 import { useState, useEffect, useRef } from "react"
 import { useRouter } from "next/navigation"
 import styles from "./profile.module.css"
-import api from "@/app/api"
+import api from "@/utils/api"
 
 interface UserInfo {
   name: string

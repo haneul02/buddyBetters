@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { useParams, useRouter } from "next/navigation";
-import api from "@/app/api"; // Assuming @/app/api is correctly configured for axios instance
+import api from "@/utils/api";
 
 interface GroupPermissions {
   isLoading: boolean;

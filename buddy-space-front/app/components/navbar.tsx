@@ -3,7 +3,7 @@
 import type React from "react"
 import { useEffect, useState, useRef } from "react"
 import { useRouter } from "next/navigation"
-import api from "@/app/api"
+import api from "@/utils/api"
 import { useChatDropdown } from "./chat/useChatDropdown"
 import styles from "./navbar.module.css"
 import ChatWindow from "./chat/chat-window"

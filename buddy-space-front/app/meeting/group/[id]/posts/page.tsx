@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { useParams, useRouter } from "next/navigation"
 import { useGroupPermissions, usePermissionChecker } from "../layout"
 import styles from "./posts.module.css"
-import api from "@/app/api"
+import api from "@/utils/api"
 
 interface Post {
   id: number

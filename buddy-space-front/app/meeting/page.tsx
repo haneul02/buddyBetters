@@ -4,7 +4,7 @@ import type React from "react"
 
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
-import api from "@/app/api"
+import api from "@/utils/api"
 import styles from "./meeting.module.css"
 
 interface Group {

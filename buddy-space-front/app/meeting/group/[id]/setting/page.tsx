@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from "react"
 import { useParams, useRouter } from "next/navigation"
 import { useGroupPermissions } from "../hooks"
 import styles from "./setting.module.css"
-import api from "@/app/api"
+import api from "@/utils/api"
 import { getAuthHeaders } from "@/app/api/auth"
 import { createPortal } from "react-dom"
 

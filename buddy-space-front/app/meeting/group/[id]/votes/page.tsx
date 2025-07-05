@@ -6,7 +6,7 @@ import { format, parseISO } from 'date-fns'
 import { useParams } from "next/navigation"
 import { createPortal } from "react-dom"
 import { useGroupPermissions } from "../hooks"
-import api from "@/app/api"
+import api from "@/utils/api"
 import styles from "./votes.module.css"
 
 interface VoteSummary {

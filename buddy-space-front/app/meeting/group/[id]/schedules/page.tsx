@@ -16,7 +16,7 @@ import {
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import styles from './schedules.module.css';
-import api from '@/app/api';
+import api from '@/utils/api';
 import { useGroupPermissions } from '../hooks';
 import { useParams } from 'next/navigation';
 import { ko } from 'date-fns/locale'
