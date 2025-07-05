@@ -2,10 +2,7 @@
 
 import axios from "axios";
 
-const baseURL =
-  process.env.NODE_ENV === "development"
-    ? "http://localhost:8080/api"
-    : "https://api.budderz.co.kr/api";
+const baseURL = "";
 
 
 // ————— 토큰 재발급 헬퍼 —————
