@@ -8,6 +8,9 @@ const nextConfig = {
 
   // ── 리라이트 설정 (localhost를 환경 변수로 대체) ──
   async rewrites() {
+    if (!process.env.NEXT_PUBLIC_API_URL) {
+      return [];
+    }
     return [
       {
         source: "/api/:path*",
