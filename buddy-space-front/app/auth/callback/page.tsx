@@ -39,7 +39,7 @@ export default function AuthCallbackPage() {
                     // 사용자 정보 가져오기
                     try {
                         console.log("🔍 사용자 정보 조회 중...")
-                        const response = await fetch("/api/users/me", {
+                        const response = await fetch("http://localhost:8080/api/users/me", {
                             headers: {
                                 Authorization: `Bearer ${token}`,
                                 "Content-Type": "application/json",

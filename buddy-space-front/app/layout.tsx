@@ -13,13 +13,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <head>
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-          precedence="default"
-        />
-      </head>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+        precedence="default"
+      />
       <body>
         <ConditionalNavbar />
         {children}

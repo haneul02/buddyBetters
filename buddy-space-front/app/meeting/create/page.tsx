@@ -4,7 +4,7 @@ import type React from "react"
 
 import { useState, useRef } from "react"
 import { useRouter } from "next/navigation"
-import api from "@/utils/api"
+import api from "@/app/api"
 import styles from "./create.module.css"
 
 interface FormData {
@@ -125,7 +125,7 @@ export default function CreatePage() {
       const token = localStorage.getItem("accessToken")
       if (!token) throw new Error("토큰이 없습니다.")
 
-      const chatRes = await fetch(`/api/group/${groupId}/chat/rooms`, {
+      const chatRes = await fetch(`http://localhost:8080/api/group/${groupId}/chat/rooms`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

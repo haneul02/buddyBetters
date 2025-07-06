@@ -4,8 +4,8 @@ import type React from "react"
 import { useState, useRef, useEffect } from "react"
 import { useParams, useRouter } from "next/navigation"
 import styles from "../posts.module.css"
-import api from "@/utils/api"
-import { useGroupPermissions } from "../../hooks"
+import api from "@/app/api"
+import { useGroupPermissions } from "../../layout"
 
 interface AttachedFile {
   id: number

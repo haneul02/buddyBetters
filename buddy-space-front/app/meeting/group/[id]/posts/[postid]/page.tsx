@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from "react"
 import { useParams, useRouter } from "next/navigation"
-import { useGroupPermissions } from "../../hooks"
+import { useGroupPermissions } from "../../layout"
 import styles from "../posts.module.css"
-import api from "@/utils/api"
+import api from "@/app/api"
 
 interface Post {
   id: number

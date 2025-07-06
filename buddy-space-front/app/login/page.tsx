@@ -29,7 +29,7 @@ export default function LoginPage() {
 
     try {
       const res = await axios.post(
-        "/api/users/login",
+        "http://localhost:8080/api/users/login",
         { email, password },
         {
           withCredentials: true,
@@ -54,7 +54,7 @@ export default function LoginPage() {
 
   const handleGoogleLogin = () => {
     // 기존 OAuth2 엔드포인트 사용
-    window.location.href = "/oauth2/authorization/google"
+    window.location.href = "http://localhost:8080/oauth2/authorization/google"
   }
 
   return (

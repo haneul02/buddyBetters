@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from "react"
 import { useParams, useRouter } from "next/navigation"
-import { useGroupPermissions } from "../hooks"
+import { useGroupPermissions } from "../layout"
 import styles from "./members.module.css"
 import axios from "axios"
-import api from "@/utils/api"
+import api from "@/app/api"
 import { createPortal } from "react-dom"
 
 // ModalPortal 컴포넌트 추가
@@ -394,7 +394,7 @@ export default function MembersPage() {
     try {
       setIsCreatingInvite(true)
       const headers = await getAuthHeaders()
-      const res = await axios.patch(`/api/groups/${groupId}/invites`, {}, { headers })
+      const res = await axios.patch(`http://localhost:8080/api/groups/${groupId}/invites`, {}, { headers })
       setInviteData(res.data.result)
       showToast("초대 링크 생성 완료")
     } catch (e: any) {
