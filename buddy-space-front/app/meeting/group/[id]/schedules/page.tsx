@@ -17,11 +17,11 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import styles from './schedules.module.css';
 import api from '@/app/api';
-import { useGroupPermissions } from '../layout';
+import { useGroupPermissions } from '@/app/components/hooks/useGroupPermissions';
 import { useParams } from 'next/navigation';
 import { ko } from 'date-fns/locale'
 import { registerLocale } from 'react-datepicker';
-import { usePermissionChecker } from '../layout';
+import { usePermissionChecker } from '@/app/components/hooks/useGroupPermissions';
 
 
 registerLocale('ko', ko);
