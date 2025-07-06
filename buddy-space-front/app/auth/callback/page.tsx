@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
-import api from "@/app/api"             // axios 인스턴스
+import api from "@/app/api"            
 import styles from "./callback.module.css"
 
 export default function AuthCallbackPage() {
