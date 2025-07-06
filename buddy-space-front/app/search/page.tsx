@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
-import api from '@/app/api'
+import api from '../api'
 import styles from './search.module.css'
 
 const groupTypeMap: Record<string,string> = {
