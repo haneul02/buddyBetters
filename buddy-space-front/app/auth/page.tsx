@@ -1,36 +1,30 @@
-import axios from "axios"
+import axios from 'axios';
 
 const api = axios.create({
-  baseURL: "http://localhost:8080/api",
-  timeout: 15000,
-  headers: {
-    "Content-Type": "application/json",
-  },
-})
+  baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
+  timeout: 15_000,
+  headers: { 'Content-Type': 'application/json' },
+  withCredentials: true,
+});
 
-api.interceptors.request.use((config) => {
-  console.log(`🚀 ${config.method?.toUpperCase()} ${config.url}`)
-
-  if (typeof window !== "undefined") {
-    const token = localStorage.getItem("accessToken") || localStorage.getItem("token")
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`
-    }
-  }
-
-  return config
-})
+api.interceptors.request.use(config => {
+  console.debug('→', config.method?.toUpperCase(), config.url);
+  const token = typeof window !== 'undefined'
+    ? localStorage.getItem('accessToken')
+    : null;
+  if (token) config.headers.Authorization = `Bearer ${token}`;
+  return config;
+});
 
 api.interceptors.response.use(
-  (response) => {
-    console.log(` ${response.status}`)
-    return response
+  res => {
+    console.debug('←', res.status, res.config.url);
+    return res;
   },
-  (error) => {
-    console.error(` ${error.response?.status || "Network Error"}`)
-    console.error("Error details:", error.response?.data || error.message)
-    return Promise.reject(error)
-  },
-)
+  err => {
+    console.error('← ERROR', err.response?.status || err.message);
+    return Promise.reject(err);
+  }
+);
 
-export default api
+export default api;
